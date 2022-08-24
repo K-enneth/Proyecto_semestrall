@@ -44,6 +44,9 @@ TagManager:
   - name: Background
     uniqueID: 3047263289
     locked: 0
+  - name: Mountains
+    uniqueID: 2984281085
+    locked: 0
   - name: Ground
     uniqueID: 1257150085
     locked: 0
