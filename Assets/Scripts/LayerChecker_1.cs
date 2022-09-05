@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LayerChecker_3 : MonoBehaviour
+public class LayerChecker_1 : MonoBehaviour
 {
 
     public enum LayerChekerType
