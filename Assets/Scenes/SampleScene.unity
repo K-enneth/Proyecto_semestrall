@@ -6773,10 +6773,10 @@ GameObject:
   - component: {fileID: 1281435050}
   - component: {fileID: 1281435049}
   - component: {fileID: 1281435048}
+  - component: {fileID: 1281435055}
   - component: {fileID: 1281435052}
   - component: {fileID: 1281435053}
   - component: {fileID: 1281435054}
-  - component: {fileID: 1281435051}
   m_Layer: 0
   m_Name: hero-run-1
   m_TagString: Untagged
@@ -6873,22 +6873,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1281435051
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1281435047}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ce35400463147d146af96ebda4382d07, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed_: 5
-  movementDirection: {x: 0, y: 0}
-  animatorController: {fileID: 1281435054}
-  jumpForce: 10
 --- !u!70 &1281435052
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -6938,6 +6922,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c0de4bbd41340c41b915765d69204bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1281435055
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1281435047}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 159da5ddb283ffa44a744bb9acf2e2a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animatorController: {fileID: 1281435054}
+  footA: {fileID: 1613666406}
+  footB: {fileID: 116866943}
+  canDoubleJump: 0
+  canCheckGround: 0
+  doubleJumpForce: 0
+  jumpForce: 10
+  speed_: 5
+  movementDirection: {x: 0, y: 0}
 --- !u!1 &1613666404
 GameObject:
   m_ObjectHideFlags: 0
