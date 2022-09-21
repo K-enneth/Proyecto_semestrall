@@ -6938,8 +6938,10 @@ MonoBehaviour:
   footA: {fileID: 1613666406}
   footB: {fileID: 116866943}
   canDoubleJump: 0
+  playerIsAttacking: 0
   canCheckGround: 0
-  doubleJumpForce: 0
+  canMove: 0
+  doubleJumpForce: 15
   jumpForce: 10
   speed_: 5
   movementDirection: {x: 0, y: 0}
