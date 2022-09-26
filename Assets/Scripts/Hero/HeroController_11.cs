@@ -5,6 +5,9 @@ using UnityEngine;
 
 public class HeroController_11 : MonoBehaviour
 {
+    [Header("Attack Variables")]
+    [SerializeField] SwordController_1 swordController;
+
     [Header("Animation Variable")]
     [SerializeField] AnimatorController_1 animatorController;
 
@@ -156,6 +159,7 @@ public class HeroController_11 : MonoBehaviour
         {
             animatorController.Play(AnimationId.Attack);  //ejecutamos Clip "Atack"
             playerIsAttacking = true;                     //Prendemos la variable como verdadera (el héroe está atacando)
+            swordController.Attack(0.4f);
             StartCoroutine(RestoreAttack());              //Inicia corrutina "RestoreAttack" (reinicia
         }
     }
