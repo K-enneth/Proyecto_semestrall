@@ -6777,7 +6777,8 @@ GameObject:
   - component: {fileID: 1168608831}
   - component: {fileID: 1168608830}
   - component: {fileID: 1168608832}
-  m_Layer: 0
+  - component: {fileID: 1168608833}
+  m_Layer: 8
   m_Name: ghost-halo-1
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -6824,7 +6825,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a40465af9602b48449aee41068ceacc8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -6921,7 +6922,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 80
-  damageFeedbackEffect: {fileID: 1281435056}
+  damageFeedbackEffect: {fileID: 1168608833}
+--- !u!114 &1168608833
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1168608826}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09e7074e1de5a2043ad3f0d16860ff99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1281435047
 GameObject:
   m_ObjectHideFlags: 0
@@ -6937,8 +6950,7 @@ GameObject:
   - component: {fileID: 1281435052}
   - component: {fileID: 1281435053}
   - component: {fileID: 1281435054}
-  - component: {fileID: 1281435056}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: hero-run-1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7025,7 +7037,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1281435047}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.442427, y: -1.5594982, z: -0.01928708}
+  m_LocalPosition: {x: -5.442427, y: -1.5594982, z: -0.1}
   m_LocalScale: {x: 3.7231, y: 4.8885, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -7108,18 +7120,6 @@ MonoBehaviour:
   jumpForce: 10
   speed_: 5
   movementDirection: {x: 0, y: 0}
---- !u!114 &1281435056
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1281435047}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09e7074e1de5a2043ad3f0d16860ff99, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1441972987
 GameObject:
   m_ObjectHideFlags: 0
