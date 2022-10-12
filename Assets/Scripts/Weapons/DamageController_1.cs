@@ -15,8 +15,7 @@ public class DamageController_1 : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-
-
+       // Debug.Log("si esta trigger");
         if (collision.gameObject.tag.Equals(targetTag.ToString()))
         {
             var component = collision.gameObject.GetComponent<ITargetCombat_1>();

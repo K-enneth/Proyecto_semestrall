@@ -3,15 +3,16 @@ using System.Collections.Generic;
 using UnityEditor.Animations;
 using UnityEngine;
 
-public class HeroController_11 : MonoBehaviour
+public class HeroController_11 : MonoBehaviour,ITargetCombat_1
 {
+    [Header("Health Variables")]//
+    [SerializeField] int health = 10;//
+
     [Header("Attack Variables")]
     [SerializeField] SwordController_1 swordController;
 
     [Header("Animation Variable")]
     [SerializeField] AnimatorController_1 animatorController;
-
-
 
 
     [Header("Checker Variables")]                                //Cabecera del ComboBox "Variables"  //"SerializeField" significa que desde el inspector podemos  manipular o ver su valor.
@@ -39,6 +40,8 @@ public class HeroController_11 : MonoBehaviour
                                                             //y es personaje saltó.
     private bool playerIsOnGround;                          //Variable privada tipo Bool, el Heroe esta tocando el piso?
 
+    private float alpha = 1;                                //
+    public GameObject heroe;                                //
 
     void Start()
     {
@@ -152,6 +155,21 @@ public class HeroController_11 : MonoBehaviour
         canCheckGround = true;
     }
 
+
+    public void TakeDamage(int damagePoints)
+     {
+         health = Mathf.Clamp(health - damagePoints, 0, 10);
+         alpha -= health* Time.deltaTime;                                                        //canal alpha
+         Color newColor = new Color(1, 1, 1, alpha);                                             //nuevo color con efecto alpha
+         heroe.GetComponent<SpriteRenderer>().color = newColor;                                  //obtenemos el componente SpriteRender y aplicamos nuevo color
+         //Debug.Log(health);
+         if(health == 0)
+         {
+             Destroy(gameObject);
+         }
+     }
+
+
     void HandleAttack()                         //Método de animación Attack (puede atacar en el piso y en el aire)
     {
         //Debug.Log("ok");
@@ -174,4 +192,6 @@ public class HeroController_11 : MonoBehaviour
             animatorController.Play(AnimationId.PrepararBrinco);  //Inicia clip "preparaBrinco"
         canMove = true;                                 //prende la variable "canMove"
     }
+
+
 }
