@@ -57,3 +57,6 @@ TagManager:
   - name: Hero
     uniqueID: 489001257
     locked: 0
+  - name: enemy_explosion
+    uniqueID: 2007924117
+    locked: 0

@@ -27,7 +27,7 @@ public class CameraController_1 : MonoBehaviour
 
         [SerializeField] BoundaryRange boundaryX;
         [SerializeField] BoundaryRange boundaryY;
- //       [SerializeField] GameObject background;
+        //[SerializeField] GameObject background;
  //          [SerializeField] float sizeSpeed=1;
 //           [SerializeField] Vector2 scaleFactor;
            private GameObject targetGameObject;
@@ -37,11 +37,12 @@ public class CameraController_1 : MonoBehaviour
 //               CameraSize cameraSizeY;
 
            Vector3 vel;
+       private bool freezeCamera = false;
     /*
 
            Vector2 targetTemp;
 
-           private bool freezeCamera = false;
+          
 
           public void ChangeCameraSize(float sizeCamera) {
                StartCoroutine(_ChangeCameraSize( sizeCamera));
@@ -80,20 +81,26 @@ public class CameraController_1 : MonoBehaviour
 //               cameraSizeY.max = Camera.main.ViewportToWorldPoint(new Vector3(0, 1, 0)).y - this.transform.position.y;
 
     }
- /*
-           public void UpdatePosition(Vector2 position)
-           {
-               this.transform.position = (Vector3)position+new Vector3(0,0,offsetZ);
-           }
-           public void FreezeCamera() 
-           {
-               freezeCamera = true;
-           }
-*/
-           void Update()
+    /*
+              public void UpdatePosition(Vector2 position)
+              {
+                  this.transform.position = (Vector3)position+new Vector3(0,0,offsetZ);
+              }
+              public void FreezeCamera() 
+              {
+                  freezeCamera = true;
+              }
+   */
+
+            public void FreezeCamera()
+            {
+                freezeCamera = true;
+            }
+
+void Update()
            {
 
-              if (targetGameObject)
+        if(targetGameObject && !freezeCamera)
                 {
 //                   targetTemp = new Vector2( targetGameObject.transform.position.x, targetTemp.y);
 //                   if (HeroController.instance.playerIsOnGround) {

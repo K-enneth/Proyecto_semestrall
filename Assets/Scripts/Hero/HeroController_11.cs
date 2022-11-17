@@ -47,8 +47,22 @@ public class HeroController_11 : MonoBehaviour,ITargetCombat_1
     public GameObject heroe;                                //
 
     public TMP_Text Contador;                               //variable tipo "TMP_Text" = Contador (salud del Héroe)
-                                                             //El valor de "Contador" esta linkeado al texto del Canvas
-                                                             //y va variando de acuerdo el método "TakeDamage"
+                                                            //El valor de "Contador" esta linkeado al texto del Canvas
+                                                            //y va variando de acuerdo el método "TakeDamage"
+
+    public static HeroController_11 instance;
+     private void Awake()
+     {
+         if (instance == null)
+         {
+             instance = this;
+             DontDestroyOnLoad(this.gameObject);
+         }
+         else
+         {
+             Destroy(this.gameObject);
+         }
+     }
 
     void Start()
     {
@@ -204,5 +218,10 @@ public class HeroController_11 : MonoBehaviour,ITargetCombat_1
         canMove = true;                                 //prende la variable "canMove"
     }
 
+    public void UpdatePosition(Vector2 position)
+     {
+         this.transform.position = position;
+         rigidbody2D_.velocity = Vector2.zero;
+     }
 
 }
