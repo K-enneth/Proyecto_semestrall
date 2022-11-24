@@ -7,7 +7,24 @@ using UnityEngine;
 public class HeroController_11 : MonoBehaviour,ITargetCombat_1
 {
     [Header("Health Variables")]//
-    [SerializeField] int health = 10;//
+    //[SerializeField] int health = 10;//
+
+    private int _health = 10;
+     [SerializeField] int health                             //variable de salud
+     {                      
+         get
+         {
+         return _health;
+         }
+         set
+         {
+             if(_health != value)
+             {
+                 GameManager.instance.UpdateHealth(value);
+             }
+             _health = value;
+         }
+     }
 
     [Header("Attack Variables")]
     [SerializeField] SwordController_1 swordController;
@@ -62,7 +79,8 @@ public class HeroController_11 : MonoBehaviour,ITargetCombat_1
          {
              Destroy(this.gameObject);
          }
-     }
+         health = 10;
+    }
 
     void Start()
     {
